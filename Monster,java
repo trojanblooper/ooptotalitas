@@ -1,0 +1,75 @@
+public abstract class Monster {
+	private String namamonster;
+	private int atk;
+	private int hp;
+	private Posisi pos;
+	private int money;
+	private int inclevel;
+
+	//konstruktor
+	public Monster(String nama, int atk, int hp, int money, int inclevel){
+		setNamamon(nama);
+		setATK(atk);
+		setHP(hp);
+		setMoney(money);
+		setInclevel(inclevel);
+	}
+
+	//method
+	public abstract void printJenis();
+
+	public void printStatmon(){
+		System.out.println("Nama monster : "+this.getNamamon());
+		System.out.println("ATK : "+this.getATK());
+		System.out.println("HP : "+this.getHP());
+	}
+
+	public void printLoot(){
+		System.out.println("Uang : "+this.getMoney());
+		System.out.println("Increase Level : "+this.getInclevel());
+	}
+
+	//getter setter
+	public void setNamamon(String nama){
+		this.namamonster=nama;
+	}
+	public String getNamamon(){
+		return this.namamonster;
+	}
+
+	public void setATK(int atk){
+		this.atk=atk;
+	}
+	public int getATK(){
+		return this.atk;
+	}
+
+	public void setHP(int hp){
+		this.hp=hp;
+	}
+	public int getHP(){
+		return this.hp;
+	}
+
+	public void setMoney(int money){
+		this.money=money;
+	}
+	public int getMoney(){
+		return this.money;
+	}
+
+	public void setInclevel(int inclevel){
+		this.inclevel=inclevel;
+	}
+	public int getInclevel(){
+		return this.inclevel;
+	}
+
+	public void setPos(int x,int y){
+		this.pos= new Posisi(x,y);
+	}
+
+	public void printPos(){
+		System.out.println("Posisi monster berada di "+pos.getX()+","+pos.getY());
+	}
+}
